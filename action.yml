@@ -1,5 +1,5 @@
-name: "React Deploy to S3"
-description: "Build a React.js web app and sync to an AWS S3 repository"
+name: "React Deploy to S3 (npm)"
+description: "Build a React.js web app and sync to an AWS S3 repository. Uses npm instead of yarn"
 author: jeanlescure
 runs:
   using: docker
