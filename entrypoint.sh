@@ -43,9 +43,8 @@ EOF
 # - Build react bundle
 # - Sync using our dedicated profile and suppress verbose messages.
 #   All other flags are optional via the `args:` directive.
-sh -c "cd client" \
-&& sh -c "npm install" \
-&& sh -c "${NODE_ENV_PREPEND} npm run build" \
+sh -c "npm install --prefix ${WORKING_DIR}" \
+&& sh -c "${NODE_ENV_PREPEND} npm run build--prefix ${WORKING_DIR}" \
 && sh -c "aws s3 sync ${SOURCE_DIR:-public} s3://${AWS_S3_BUCKET}/${DEST_DIR} \
               --profile react-deploy-to-s3-action \
               --no-progress \
